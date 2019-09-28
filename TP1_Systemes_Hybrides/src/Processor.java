@@ -15,7 +15,6 @@ public class Processor extends AtomicComposant {
 	@Override
 	public void deltaExt() {
 		if (this.inputs.get((int) this.global_time).equals("req") && this.current_state == 0) {
-			this.time_spent = 0 ;
 			this.current_state = 1 ;
 		}
 	}
@@ -23,7 +22,6 @@ public class Processor extends AtomicComposant {
 	@Override
 	protected void deltaInt() {
 		if (this.current_state == 2 && this.time_spent == this.ta(this.current_state)) {
-			this.time_spent = 0 ;
 			this.current_state = 0 ;
 		}
 
